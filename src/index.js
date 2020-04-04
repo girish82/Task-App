@@ -16,11 +16,11 @@ require('../src/db/mongoose')
 
 app.use(express.json())
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT 
 
 app.use(userRouter)
 app.use(taskRouter)
 
 app.listen(PORT,()=>{
-    console.log('Server Started')
+    console.log('Server Started' + PORT)
 })
