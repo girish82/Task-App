@@ -16,6 +16,7 @@ const auth = async (req,res,next)=>{
             throw new Error()
         }
 
+
         req.token = token
         req.user = user
         next()
@@ -34,12 +35,12 @@ const postMiddle = async (req,res,next)=>{
         next()
 
     }catch(e){
-        res.status(401).send({Error :' Please authenicate'})
+         res.status(401).send({Error :' Please authenicate'})
     }
 }
 
 
 module.exports = {
     auth,
-    postMiddle
+     postMiddle
 }
