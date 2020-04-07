@@ -7,7 +7,7 @@ const sharp = require('sharp')
 const {sendwelcomeEmail,sendCancelEmail} = require('../emails/account')
 
 
-router.post('/users', async(req,res) =>{
+router.post('/users',postMiddle, async(req,res) =>{
     const user = new User(req.body)
     try{
         await user.save()
