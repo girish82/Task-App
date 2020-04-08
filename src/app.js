@@ -5,6 +5,8 @@ const Task = require('../src/models/task')
 const userRouter = require('../src/routers/user')
 const taskRouter = require('../src/routers/task')
 require('../src/db/mongoose')
+var cors = require('cors');
+app.use(cors())
 
 // app.use(cors())
 
