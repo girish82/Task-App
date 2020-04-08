@@ -11,8 +11,8 @@ app.use(express.json())
 // const PORT = process.env.PORT 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin","*");
-    res.header("Access-Control-Allow-Methods", "POST, GET, PATCH, DELETE");
-    res.header("Access-Control-Allow-Header","Origin, X-Requested-With, Content-Type, Accept");
+    // res.header("Access-Control-Allow-Methods", "POST, GET, PATCH, DELETE");
+    // res.header("Access-Control-Allow-Header","Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
 
