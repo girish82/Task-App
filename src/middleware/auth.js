@@ -6,7 +6,7 @@ const auth = async (req,res,next)=>{
 
         res.header("Access-Control-Allow-Origin","*");
         // res.header("Access-Control-Allow-Methods", "POST, GET, PATCH, DELETE");
-        // res.header("Access-Control-Allow-Header","Origin, X-Requested-With, Content-Type, Accept");
+        res.header("Access-Control-Allow-Header","Origin, X-Requested-With, Content-Type, Accept");
 
         const token = req.header('Authorization').replace('Bearer ','')
         const decoded = jwt.verify(token,process.env.JWT_SECRET)
@@ -31,7 +31,7 @@ const postMiddle = async (req,res,next)=>{
 
         res.header("Access-Control-Allow-Origin","*");
         // res.header("Access-Control-Allow-Methods", "POST, GET, PATCH, DELETE");
-        // res.header("Access-Control-Allow-Header","Origin, X-Requested-With, Content-Type, Accept");
+        res.header("Access-Control-Allow-Header","Origin, X-Requested-With, Content-Type, Accept");
         next()
 
     }catch(e){
