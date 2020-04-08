@@ -4,11 +4,11 @@ const User = require('../models/user')
 const auth = async (req,res,next)=>{
     try{
 
-        res.setHeader("Access-Control-Allow-Origin","*");
+        res.header("Access-Control-Allow-Origin","*");
         // res.header("Access-Control-Allow-Methods", "POST, GET, PATCH, DELETE");
-        res.setHeader("Access-Control-Allow-Credentials", true);
-        res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS')
-        res.setHeader("Access-Control-Allow-Header","Origin, X-Requested-With, Content-Type, Accept");
+         res.header("Access-Control-Allow-Credentials", true);
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS')
+        res.header("Access-Control-Allow-Header","Origin, X-Requested-With, Content-Type, Accept");
 
         const token = req.header('Authorization').replace('Bearer ','')
         const decoded = jwt.verify(token,process.env.JWT_SECRET)
@@ -31,10 +31,10 @@ const auth = async (req,res,next)=>{
 const postMiddle = async (req,res,next)=>{
     try{
 
-        res.setHeader("Access-Control-Allow-Origin","*");
+        res.header("Access-Control-Allow-Origin","*");
         // res.header("Access-Control-Allow-Methods", "POST, GET, PATCH, DELETE");
-        res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS')
-        res.setHeader("Access-Control-Allow-Header","Origin, X-Requested-With, Content-Type, Accept");
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS')
+        res.header("Access-Control-Allow-Header","Origin, X-Requested-With, Content-Type, Accept");
         next()
 
     }catch(e){
