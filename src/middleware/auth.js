@@ -4,6 +4,8 @@ const User = require('../models/user')
 const auth = async (req,res,next)=>{
     try{
 
+      
+
         res.header("Access-Control-Allow-Origin","*");
         // res.header("Access-Control-Allow-Methods", "POST, GET, PATCH, DELETE");
          res.header("Access-Control-Allow-Credentials", true);
